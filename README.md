@@ -1,2 +1,2 @@
-# Swarm_Robotics_Projects
-Swarm robotic projects done as a part of Northwestern's MECH_ENG 409 course
+# Swarm Robotics Projects
+See my [portfolio](www.billyen33.com/swarm.html) for a detailed description of these three projects.
