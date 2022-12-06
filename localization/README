@@ -1,0 +1,19 @@
+CoachSwarm simulator.
+
+Credit: the graphic display module used image thewtex/opengl from https://hub.docker.com/r/thewtex/opengl.
+
+The system calls that coachbot offers to users are:
+
+set_led(r, g, b): The syscall that sets the color and brightness of onboard led. The input r, g, b should be integers such that 0<= r, g, b<=100.
+
+set_vel(l,r): The syscall that sets speeds for left and right wheels. The input l and r should be integers such that -100 <= l, r <= 100.
+
+get_clock(): The syscall that returns the time elapsed since the program started. The returned value is a float, the unit is second.
+
+recv_msg(): The syscall that returns the msgs received since last time recv_msg() was called. The function returns a list in which each element is a packet with a size of 64 bytes. Note that each robot's communication buffer is a LIFO queue with limited size (1024 bytes), therefore, this function will return up to 16 packets.
+
+send_msg(msg): The syscall that transmits the packet msg. The input msg should be a string with a length less than 64 bytes. If the length of the msg exceeds the MTU (64 bytes), only the first 64 bytes will be transmitted and the rest will be discarded. Note that the bandwidth of the communication channel is limited, therefore, it is possible that the transmission of the packet fails if syscall sens_msg() is called too frequently. The syscall will return True if the msg is transmitted successfully, and False otherwise.
+
+get_pose(): The syscall that returns the robot's global pose (x, t, theta). Note that the onboard sensor has a limited sampling rate of 30HZ. If there is no data from received the sensor since the last time the function get_pose() is called, the syscall will return None. If there is new data received from the sensor, the syscall will return a 3-tuple (x, y, theta), which are robot's x position, y, position, and orientation, respectively.
+
+random.*: An instance of the python random module. A detailed description can be found at https://docs.python.org/2/library/random.html

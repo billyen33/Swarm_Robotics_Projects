@@ -1,0 +1,4 @@
+docker rm -f cs-local &
+docker pull hanlinwang/coachswarm:swarmclass_beta&
+docker build --rm --tag coachswarm-local . &
+docker run -p 6083:6080  --name cs-local coachswarm-local:latest
