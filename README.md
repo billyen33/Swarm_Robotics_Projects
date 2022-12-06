@@ -12,7 +12,7 @@ git clone https://github.com/billyen33/Swarm_Robotics_Projects.git
 ```
 cd MyFolder/Swarm_Robotics_Project/localization
 ```
-5. Go to the start.txt file in the project you want to run and copy the command there, paste it into the terminal and press run
+5. Go to the start.txt file in the project you want to run and copy the command there, paste it into the terminal and press enter
 6. Open Docker Desktop, go to Container, then click on the "Open in Browser" browser in the side pop-up menu
 7. The Docker simulation should show up on your browser as a new window in a few seconds, enjoy!
 8. To stop the simulation (or to rerun it in case of a connection error), go to the second command prompt and enter in the following command:
